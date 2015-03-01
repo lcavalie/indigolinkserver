@@ -30,6 +30,14 @@ For notifications to work (APN) you will need to go through the (usual) process 
 
 To run the server from the command line use: python indigolinkserver.py
 
+# How it works
+
+When the indigolink server runs it polls the indigo domotics API every X number of seconds (defined in the globalVariables) and tracks changes to the attached devices (Z-Wave for now only).
+
+There is an iPhone app (indigolink) that can be used to connect to the indiholink server (uses sockets) and if a client is connected the indigolink server will push changes to the client which updates. 
+
+The indigolink server also sends notifications (APN) if there are important events (e.g. smoke detector is triggered) or the 'alarm' setting is turned on (then motion sesors & door/window sensors will trigger notifications as well).
+
 #License
 
 Licensed under the Apache License, Version 2.0.
